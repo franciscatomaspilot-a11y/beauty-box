@@ -1,0 +1,1530 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+:root {
+
+    --pink: #f6c5ed;
+    --pink-light: #fff4fc;
+    --pink-soft: #fbe4f7;
+    --wine: #8c0050;
+    --wine-dark: #650038;
+    --text: #30222d;
+    --muted: #786875;
+    --white: #ffffff;
+    --line: #ead8e6;
+    --shadow: 0 20px 55px rgba(100, 0, 55, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", Arial, sans-serif;
+    color: var(--text);
+    background: #fffafd;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 250, 253, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(140, 0, 80, 0.08);
+}
+
+.header-content {
+    width: min(1180px, 92%);
+    height: 82px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #57444f;
+}
+
+.nav a {
+    position: relative;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 1.5px;
+    background: var(--wine);
+    transition: width .25s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 15px;
+    border-radius: 30px;
+    background: var(--wine);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .25s ease;
+}
+
+.cart-button:hover {
+    background: var(--wine-dark);
+    transform: translateY(-2px);
+}
+
+.cart-button b {
+    min-width: 21px;
+    height: 21px;
+    padding: 2px 5px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--pink);
+    color: var(--wine);
+    font-size: 11px;
+}
+
+.hero {
+    min-height: 650px;
+    width: 100%;
+    background: var(--pink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px max(4%, calc((100% - 1100px) / 2));
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-text {
+    width: 55%;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--wine);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 17px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(55px, 7vw, 92px);
+    line-height: .95;
+    color: var(--wine);
+    font-weight: 600;
+}
+
+.hero h1 span {
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 470px;
+    margin: 28px 0;
+    line-height: 1.8;
+    color: #5e4558;
+    font-size: 15px;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    padding: 16px 23px;
+    background: var(--wine);
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1.7px;
+    font-weight: 700;
+    transition: .25s ease;
+}
+
+.main-button:hover {
+    background: var(--wine-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(100, 0, 55, .18);
+}
+
+.main-button span {
+    font-size: 18px;
+}
+
+.hero-card {
+    width: 350px;
+    height: 390px;
+    background: rgba(255,255,255,.58);
+    border: 1px solid rgba(255,255,255,.8);
+    padding: 30px;
+    transform: rotate(3deg);
+    box-shadow: 25px 30px 60px rgba(100, 0, 55, .10);
+    position: relative;
+    z-index: 2;
+}
+
+.mini-card-top {
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--wine);
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.hero-box {
+
+    width: 245px;
+
+    height: 190px;
+
+    margin: 40px auto 25px;
+
+    background: #f5d9ef;
+
+    border: 2px solid rgba(140,0,80,.2);
+
+    position: relative;
+
+    box-shadow: 0 20px 25px rgba(80,0,50,.12);
+
+}
+
+
+.hero-lid {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 55px;
+
+    top: -23px;
+
+    left: 15px;
+
+    background: #f8e6f4;
+
+    border: 2px solid rgba(140,0,80,.2);
+
+    display: grid;
+
+    place-items: center;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    letter-spacing: 4px;
+
+    color: var(--wine);
+
+    font-size: 18px;
+
+}
+
+
+.hero-products {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    padding-top: 75px;
+
+    color: var(--wine);
+
+    font-size: 30px;
+
+}
+
+
+.hero-card > p {
+
+    text-align: center;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    color: var(--wine);
+
+    font-style: italic;
+
+}
+
+
+.hero-decoration {
+
+    position: absolute;
+
+    border: 1px solid rgba(140,0,80,.14);
+
+    border-radius: 50%;
+
+}
+
+
+.decoration-one {
+
+    width: 500px;
+
+    height: 500px;
+
+    right: -190px;
+
+    top: -180px;
+
+}
+
+
+.decoration-two {
+
+    width: 250px;
+
+    height: 250px;
+
+    left: -130px;
+
+    bottom: -120px;
+
+}
+
+
+
+/* INTRO */
+
+
+.intro {
+
+    text-align: center;
+
+    padding: 100px 20px 55px;
+
+}
+
+
+.intro h2,
+.section-heading h2,
+.contact h2 {
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    color: var(--wine);
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    font-weight: 600;
+
+}
+
+
+.intro > p:last-child {
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+}
+
+
+
+/* PRODUCTOS */
+
+
+.products {
+
+    width: min(1180px, 92%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    padding-bottom: 115px;
+
+}
+
+
+.product-card {
+
+    background: white;
+
+    border: 1px solid var(--line);
+
+    transition: transform .3s ease, box-shadow .3s ease;
+
+}
+
+
+.product-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.product-image {
+
+    height: 360px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+    overflow: hidden;
+
+}
+
+
+.image-one {
+
+    background: #fbe7f7;
+
+}
+
+
+.image-two {
+
+    background: #f7d9ee;
+
+}
+
+
+.image-three {
+
+    background: #f3c9e7;
+
+}
+
+
+.product-tag {
+
+    position: absolute;
+
+    left: 17px;
+
+    top: 17px;
+
+    background: white;
+
+    color: var(--wine);
+
+    padding: 8px 11px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+
+    z-index: 3;
+
+}
+
+
+.fake-box {
+
+    width: 210px;
+
+    height: 175px;
+
+    background: #f5d9ef;
+
+    border: 2px solid rgba(140,0,80,.18);
+
+    box-shadow: 0 25px 35px rgba(80,0,50,.13);
+
+    position: relative;
+
+}
+
+
+.fake-lid {
+
+    position: absolute;
+
+    width: 215px;
+
+    height: 48px;
+
+    left: 13px;
+
+    top: -22px;
+
+    background: #fff1fb;
+
+    border: 2px solid rgba(140,0,80,.16);
+
+    display: grid;
+
+    place-items: center;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    color: var(--wine);
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.fake-inside {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    height: 100%;
+
+    padding-top: 30px;
+
+}
+
+
+.makeup {
+
+    width: 38px;
+
+    height: 62px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: white;
+
+    border: 1px solid #e3c5dd;
+
+    border-radius: 7px 7px 4px 4px;
+
+    color: var(--wine);
+
+    font-size: 19px;
+
+    box-shadow: 0 7px 12px rgba(90,0,60,.08);
+
+}
+
+
+.makeup-two {
+
+    height: 75px;
+
+    background: #f8d5eb;
+
+}
+
+
+.makeup-three {
+
+    height: 53px;
+
+    background: #fcebf7;
+
+}
+
+
+.mirror {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    border: 5px solid white;
+
+    outline: 1px solid #d5b0cc;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #d5a3cb;
+
+    font-size: 0;
+
+}
+
+
+.sparkle {
+
+    position: absolute;
+
+    color: var(--wine);
+
+}
+
+
+.sparkle-a {
+
+    top: 95px;
+
+    right: 23%;
+
+    font-size: 22px;
+
+}
+
+
+.sparkle-b {
+
+    bottom: 90px;
+
+    left: 23%;
+
+    font-size: 17px;
+
+}
+
+
+.product-info {
+
+    padding: 25px;
+
+}
+
+
+.product-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+
+.product-heading h3 {
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    color: var(--wine);
+
+    font-size: 25px;
+
+}
+
+
+.price {
+
+    color: var(--wine);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+.product-description {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin: 13px 0;
+
+}
+
+
+.product-info ul {
+
+    list-style: none;
+
+    color: #594a55;
+
+    font-size: 12px;
+
+    line-height: 2;
+
+    margin-bottom: 20px;
+
+}
+
+
+.product-info li::before {
+
+    content: "✦";
+
+    color: var(--wine);
+
+    margin-right: 8px;
+
+    font-size: 9px;
+
+}
+
+
+.add-button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    background: var(--wine);
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition: .25s ease;
+
+}
+
+
+.add-button:hover {
+
+    background: var(--wine-dark);
+
+}
+
+
+
+/* COMO FUNCIONA */
+
+
+.how-section {
+
+    background: var(--pink-light);
+
+    padding: 100px max(4%, calc((100% - 1100px) / 2));
+
+}
+
+
+.section-heading {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+
+.steps {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 50px;
+
+}
+
+
+.step {
+
+    border-top: 1px solid #dcb8d4;
+
+    padding-top: 20px;
+
+}
+
+
+.step > span {
+
+    color: var(--wine);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.step h3 {
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    color: var(--wine);
+
+    font-size: 24px;
+
+    margin: 15px 0 8px;
+
+}
+
+
+.step p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* FRASE */
+
+
+.quote-section {
+
+    text-align: center;
+
+    padding: 115px 20px;
+
+    background: white;
+
+}
+
+
+.quote-section > span {
+
+    font-family: Georgia, serif;
+
+    font-size: 70px;
+
+    line-height: 30px;
+
+    color: var(--pink);
+
+}
+
+
+.quote-section p {
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(25px, 4vw, 40px);
+
+    line-height: 1.25;
+
+    color: var(--wine);
+
+}
+
+
+.quote-section small {
+
+    display: block;
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    letter-spacing: 3px;
+
+    font-size: 10px;
+
+}
+
+
+
+/* CONTACTO */
+
+
+.contact {
+
+    width: min(1100px, 90%);
+
+    margin: 0 auto 100px;
+
+    padding: 65px;
+
+    background: var(--pink);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 50px;
+
+}
+
+
+.contact h2 {
+
+    font-size: 43px;
+
+}
+
+
+.contact p:not(.eyebrow) {
+
+    margin-top: 12px;
+
+    color: #654e60;
+
+    font-size: 13px;
+
+}
+
+
+.contact-links {
+
+    min-width: 270px;
+
+}
+
+
+.contact-links a {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid rgba(140,0,80,.18);
+
+    color: var(--wine);
+
+    font-size: 12px;
+
+}
+
+
+.contact-links b {
+
+    font-weight: 700;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer {
+
+    background: var(--wine-dark);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 55px 20px;
+
+}
+
+
+.footer-brand {
+
+    font-family: Georgia, serif;
+
+    letter-spacing: 7px;
+
+    font-size: 28px;
+
+}
+
+
+footer p {
+
+    margin: 12px 0 25px;
+
+    opacity: .8;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-style: italic;
+
+}
+
+
+footer small {
+
+    opacity: .5;
+
+    font-size: 10px;
+
+}
+
+
+
+/* CARRITO */
+
+
+.cart-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(35, 0, 25, .38);
+
+    z-index: 90;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .3s ease;
+
+}
+
+
+.cart-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.cart {
+
+    position: fixed;
+
+    z-index: 100;
+
+    right: 0;
+
+    top: 0;
+
+    height: 100vh;
+
+    width: min(430px, 100%);
+
+    background: white;
+
+    transform: translateX(100%);
+
+    transition: transform .35s ease;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow: -20px 0 60px rgba(80,0,50,.12);
+
+}
+
+
+.cart.active {
+
+    transform: translateX(0);
+
+}
+
+
+.cart-header {
+
+    padding: 28px;
+
+    border-bottom: 1px solid var(--line);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+}
+
+
+.cart-header .eyebrow {
+
+    margin-bottom: 7px;
+
+}
+
+
+.cart-header h2 {
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    color: var(--wine);
+
+    font-size: 32px;
+
+}
+
+
+.close-cart {
+
+    background: transparent;
+
+    color: var(--wine);
+
+    font-size: 31px;
+
+    line-height: 1;
+
+}
+
+
+.cart-items {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 15px 28px;
+
+}
+
+
+.empty-cart {
+
+    height: 100%;
+
+    display: grid;
+
+    place-content: center;
+
+    text-align: center;
+
+    color: var(--muted);
+
+}
+
+
+.empty-cart span {
+
+    color: var(--pink);
+
+    font-size: 45px;
+
+}
+
+
+.empty-cart p {
+
+    margin-top: 10px;
+
+    color: var(--wine);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 22px;
+
+}
+
+
+.empty-cart small {
+
+    margin-top: 6px;
+
+}
+
+
+.cart-item {
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.cart-item-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+}
+
+
+.cart-item h3 {
+
+    color: var(--wine);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 19px;
+
+}
+
+
+.cart-item-price {
+
+    color: var(--wine);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.cart-item-bottom {
+
+    margin-top: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.quantity {
+
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid var(--line);
+
+}
+
+
+.quantity button {
+
+    width: 30px;
+
+    height: 28px;
+
+    background: var(--pink-light);
+
+    color: var(--wine);
+
+}
+
+
+.quantity span {
+
+    width: 30px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+}
+
+
+.remove-item {
+
+    background: transparent;
+
+    color: #9b7d92;
+
+    font-size: 11px;
+
+    text-decoration: underline;
+
+}
+
+
+.cart-footer {
+
+    padding: 25px 28px;
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.total-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+}
+
+
+.total-row strong {
+
+    color: var(--wine);
+
+    font-size: 20px;
+
+}
+
+
+.whatsapp-button {
+
+    width: 100%;
+
+    padding: 16px;
+
+    background: #258c62;
+
+    color: white;
+
+    font-size: 10px;
+
+    letter-spacing: 1.3px;
+
+    font-weight: 700;
+
+}
+
+
+.whatsapp-button:hover {
+
+    background: #1e7552;
+
+}
+
+
+.whatsapp-button span {
+
+    float: right;
+
+    font-size: 15px;
+
+}
+
+
+.continue-button {
+
+    width: 100%;
+
+    padding: 13px;
+
+    background: transparent;
+
+    color: var(--wine);
+
+    font-size: 11px;
+
+    margin-top: 8px;
+
+}
+
+
+
+/* CELULAR */
+
+
+@media (max-width: 900px) {
+
+
+    .nav {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        padding: 70px 7%;
+
+        gap: 30px;
+
+    }
+
+
+    .hero-card {
+
+        width: 300px;
+
+    }
+
+
+    .products {
+
+        grid-template-columns: 1fr;
+
+        max-width: 550px;
+
+    }
+
+
+    .steps {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .contact {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+
+@media (max-width: 650px) {
+
+
+    .header-content {
+
+        height: 70px;
+
+    }
+
+
+    .logo {
+
+        width: 105px;
+
+    }
+
+
+    .cart-button span:nth-child(2) {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        min-height: auto;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 65px 7% 90px;
+
+    }
+
+
+    .hero-text {
+
+        width: 100%;
+
+    }
+
+
+    .hero-card {
+
+        align-self: center;
+
+        width: 300px;
+
+        height: 350px;
+
+    }
+
+
+    .hero-box {
+
+        transform: scale(.85);
+
+        margin-top: 30px;
+
+    }
+
+
+    .intro {
+
+        padding-top: 75px;
+
+    }
+
+
+    .product-image {
+
+        height: 330px;
+
+    }
+
+
+    .contact {
+
+        padding: 40px 28px;
+
+    }
+
+
+    .contact h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .contact-links {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+}
